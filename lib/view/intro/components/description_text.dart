@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/res/floating_animations.dart';
 
 import '../../../view model/responsive.dart';
 
 class AnimatedDescriptionText extends StatelessWidget {
-  const AnimatedDescriptionText(
-      {super.key, required this.start, required this.end});
+  const AnimatedDescriptionText({
+    super.key,
+    required this.start,
+    required this.end,
+  });
   final double start;
   final double end;
   @override

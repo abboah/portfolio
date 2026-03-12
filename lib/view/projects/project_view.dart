@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/getx_controllers/projects_controller.dart';
 import 'package:portfolio/view%20model/responsive.dart';
-import 'package:portfolio/view/projects/components/title_text.dart';
+import 'package:portfolio/res/modern_widgets.dart';
 import 'package:get/get.dart';
 import 'components/projects_grid.dart';
 
@@ -17,8 +17,27 @@ class ProjectsView extends StatelessWidget {
         children: [
           if (Responsive.isLargeMobile(context))
             const SizedBox(height: defaultPadding),
-          const TitleText(prefix: 'Latest', title: 'Projects'),
-          const SizedBox(height: defaultPadding),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 2),
+            child: TweenAnimationBuilder<double>(
+              tween: Tween<double>(begin: 0, end: 1),
+              duration: const Duration(milliseconds: 600),
+              curve: Curves.easeOut,
+              builder: (context, value, widget) {
+                return Transform.translate(
+                  offset: Offset((1 - value) * -30, 0),
+                  child: Opacity(
+                    opacity: value,
+                    child: ModernSectionTitle(
+                      title: 'Projects',
+                      subtitle: 'Showcasing my latest work and experience',
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: defaultPadding * 1.5),
           Expanded(
             child: Responsive(
               desktop: ProjectGrid(crossAxisCount: 3),

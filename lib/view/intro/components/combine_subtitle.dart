@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/intro/components/subtitle_text.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:portfolio/res/floating_animations.dart';
 import '../../../view model/responsive.dart';
 
 class CombineSubtitleText extends StatelessWidget {
@@ -12,14 +13,18 @@ class CombineSubtitleText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const Responsive(
-          desktop: AnimatedSubtitleText(start: 30, end: 40, text: 'Flutter '),
+          desktop: AnimatedSubtitleText(
+            start: 30,
+            end: 40,
+            text: 'Mobile App ',
+          ),
           largeMobile: AnimatedSubtitleText(
             start: 30,
             end: 25,
-            text: 'Flutter ',
+            text: 'Mobile App ',
           ),
-          mobile: AnimatedSubtitleText(start: 25, end: 20, text: 'Flutter '),
-          tablet: AnimatedSubtitleText(start: 40, end: 30, text: 'Flutter '),
+          mobile: AnimatedSubtitleText(start: 25, end: 20, text: 'Mobile App '),
+          tablet: AnimatedSubtitleText(start: 40, end: 30, text: 'Mobile App '),
         ),
         (kIsWeb && Responsive.isLargeMobile(context)
             ? const Responsive(

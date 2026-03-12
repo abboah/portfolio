@@ -16,9 +16,9 @@ class ProjectStack extends StatelessWidget {
       onHover: (value) {
         controller.onHover(index, value);
       },
-      onTap: () {
-        ImageViewer(context, projectList[index].image);
-      },
+      // onTap: () {
+      //   ImageViewer(context, projectList[index].image);
+      // },
       borderRadius: BorderRadius.circular(30),
       child: AnimatedContainer(
         padding: const EdgeInsets.only(

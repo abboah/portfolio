@@ -3,6 +3,7 @@ import 'package:portfolio/view/projects/components/project_info.dart';
 import 'package:get/get.dart';
 import '../../../model/project_model.dart';
 import '../../../res/constants.dart';
+import '../../../res/modern_widgets.dart';
 import '../../../view model/getx_controllers/projects_controller.dart';
 
 class ProjectGrid extends StatelessWidget {
@@ -20,33 +21,31 @@ class ProjectGrid extends StatelessWidget {
         childAspectRatio: ratio,
       ),
       itemBuilder: (context, index) {
-        return Obx(
-          () => AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            margin: const EdgeInsets.symmetric(
-              vertical: defaultPadding,
-              horizontal: defaultPadding,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              gradient: const LinearGradient(
-                colors: [Colors.pinkAccent, Colors.blue],
+        return TweenAnimationBuilder<double>(
+          tween: Tween<double>(begin: 0, end: 1),
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOut,
+          builder: (context, value, widget) {
+            return Transform.translate(
+              offset: Offset(0, (1 - value) * 30),
+              child: Opacity(
+                opacity: value,
+                child: ModernCard(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      secondaryColor.withOpacity(0.8),
+                      darkColor.withOpacity(0.5),
+                    ],
+                  ),
+                  borderRadius: 20,
+                  padding: const EdgeInsets.all(defaultPadding),
+                  child: ProjectStack(index: index),
+                ),
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.pink,
-                  offset: const Offset(-2, 0),
-                  blurRadius: controller.hovers[index] ? 20 : 10,
-                ),
-                BoxShadow(
-                  color: Colors.blue,
-                  offset: const Offset(2, 0),
-                  blurRadius: controller.hovers[index] ? 20 : 10,
-                ),
-              ],
-            ),
-            child: ProjectStack(index: index),
-          ),
+            );
+          },
         );
       },
     );
