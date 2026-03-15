@@ -90,7 +90,7 @@ class IntroBody extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(18),
-                child: Image.asset('images/me.png', fit: BoxFit.cover),
+                child: Image.asset('assets/images/me.png', fit: BoxFit.cover),
               ),
             ),
           const Spacer(),
