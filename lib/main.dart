@@ -4,11 +4,11 @@ import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view/splash/splash_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,16 +67,16 @@ class MyApp extends StatelessWidget {
                 color: accentCyan,
               ),
             ),
-        // Smooth transitions
-        pageTransitionsTheme: PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: ZoomPageTransitionsBuilder(),
-            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-            TargetPlatform.windows: ZoomPageTransitionsBuilder(),
-            TargetPlatform.linux: ZoomPageTransitionsBuilder(),
-            TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
-          },
-        ),
+        // // Smooth transitions
+        // pageTransitionsTheme: PageTransitionsTheme(
+        //   builders: {
+        //     TargetPlatform.android: ZoomPageTransitionsBuilder(),
+        //     TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        //     TargetPlatform.windows: ZoomPageTransitionsBuilder(),
+        //     TargetPlatform.linux: ZoomPageTransitionsBuilder(),
+        //     TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+        //   },
+        // ),
       ),
 
       home: const SplashView(),
