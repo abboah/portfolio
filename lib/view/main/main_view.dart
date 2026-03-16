@@ -18,7 +18,7 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   late PageController _scrollController;
-  bool _showScrollToTop = false;
+  bool _showScrollToTop = true;
 
   @override
   void initState() {

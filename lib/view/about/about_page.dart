@@ -21,8 +21,7 @@ class AboutMePage extends StatelessWidget {
             // Modern Section Title
             ModernSectionTitle(
               title: 'About Me',
-              subtitle:
-                  'Crafting digital experiences with passion and precision',
+              subtitle: 'Crafting mobile solutions with passion and precision',
             ),
 
             const SizedBox(height: 30),
@@ -79,7 +78,7 @@ class AboutMePage extends StatelessWidget {
             ModernSectionTitle(title: 'Who Am I?'),
             const SizedBox(height: 12),
             Text(
-              "Hi, I'm Festus Abboah — a dedicated Flutter developer with a passion for building meaningful digital experiences. I specialize in creating modern, responsive, and user-friendly applications for both mobile and web platforms.\n\n"
+              "Hi, I'm Festus Abboah — a dedicated mobile app developer with a passion for building meaningful digital experiences using Flutter. I specialize in creating modern, responsive, and user-friendly applications for both mobile and web platforms.\n\n"
               "Over time, I've worked on projects ranging from real-time chat systems and ride-hailing features to e-commerce solutions and interactive learning tools. What excites me most is transforming complex problems into clean, intuitive, and scalable solutions that people actually enjoy using.\n\n"
               "Beyond writing code, I care deeply about design, usability, and performance. I strive to bridge the gap between great engineering and great user experiences, ensuring that every product I work on feels fast, reliable, and delightful.",
               style: TextStyle(color: bodyTextColor, height: 1.7, fontSize: 15),
@@ -104,6 +103,7 @@ class AboutMePage extends StatelessWidget {
                 ModernSkillChip(label: "Firebase"),
                 ModernSkillChip(label: "Supabase"),
                 ModernSkillChip(label: "REST APIs"),
+                ModernSkillChip(label: 'Websocket'),
                 ModernSkillChip(label: "Git & GitHub"),
                 ModernSkillChip(label: "UI/UX"),
                 ModernSkillChip(label: "Responsive Design"),

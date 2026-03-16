@@ -41,7 +41,7 @@ class IntroBody extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(18),
                           child: Image.asset(
-                            'images/me.png',
+                            'assets/images/me.png',
                             fit: BoxFit.cover,
                           ),
                         ),

@@ -38,6 +38,8 @@ class TopNavigationBar extends StatelessWidget {
                     )
                   : MenuButton(onTap: () => Scaffold.of(context).openDrawer()),
             ),
+            // TODO:
+            // Adjust spaces for mobile view of the navigation bar to make the about me nav button visible
             const Spacer(flex: 2),
             if (!Responsive.isLargeMobile(context))
               const NavigationButtonList(),
